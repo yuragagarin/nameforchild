@@ -1,0 +1,7 @@
+<resources>
+
+    <dimen name="base_radius">10dp</dimen>
+    <dimen name="padding_half">8dp</dimen>
+    <dimen name="margin_base">8dp</dimen>
+
+</resources>

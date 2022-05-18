@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="ru.ernestoguevara.nameforchild.presentation.presenter.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_byLetterSelectFragment"
+            app:destination="@id/byLetterSelectFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_byZodiacSignSelectFragment"
+            app:destination="@id/byZodiacSignSelectFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_bySourceSelectFragment"
+            app:destination="@id/bySourceSelectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/byLetterFragment"
+        android:name="ru.ernestoguevara.nameforchild.presentation.presenter.by_letter.ByLetterFragment"
+        android:label="fragment_by_letter"
+        tools:layout="@layout/fragment_by_letter" >
+        <action
+            android:id="@+id/action_byLetterFragment_to_detailNameFragment"
+            app:destination="@id/detailNameFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/byLetterSelectFragment"
+        android:name="ru.ernestoguevara.nameforchild.presentation.presenter.by_letter.ByLetterSelectFragment"
+        android:label="fragment_by_letter_select"
+        tools:layout="@layout/fragment_by_letter_select" >
+        <action
+            android:id="@+id/action_byLetterSelectFragment_to_byLetterFragment"
+            app:destination="@id/byLetterFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailNameFragment"
+        android:name="ru.ernestoguevara.nameforchild.presentation.presenter.detail_name.DetailNameFragment"
+        android:label="fragment_detail_name"
+        tools:layout="@layout/fragment_detail_name" />
+    <fragment
+        android:id="@+id/byZodiacSignSelectFragment"
+        android:name="ru.ernestoguevara.nameforchild.presentation.presenter.by_zodiac_sign.ByZodiacSignSelectFragment"
+        android:label="fragment_by_zodiac_sign_select"
+        tools:layout="@layout/fragment_by_zodiac_sign_select" >
+        <action
+            android:id="@+id/action_byZodiacSignSelectFragment_to_byZodiacSignFragment"
+            app:destination="@id/byZodiacSignFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/byZodiacSignFragment"
+        android:name="ru.ernestoguevara.nameforchild.presentation.presenter.by_zodiac_sign.ByZodiacSignFragment"
+        android:label="fragment_by_zodiac_sign"
+        tools:layout="@layout/fragment_by_zodiac_sign" />
+    <fragment
+        android:id="@+id/bySourceSelectFragment"
+        android:name="ru.ernestoguevara.nameforchild.presentation.presenter.by_source.BySourceSelectFragment"
+        android:label="fragment_by_source_select"
+        tools:layout="@layout/fragment_by_source_select" >
+        <action
+            android:id="@+id/action_bySourceSelectFragment_to_bySourceFragment"
+            app:destination="@id/bySourceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bySourceFragment"
+        android:name="ru.ernestoguevara.nameforchild.presentation.presenter.by_source.BySourceFragment"
+        android:label="fragment_by_source"
+        tools:layout="@layout/fragment_by_source" />
+
+</navigation>

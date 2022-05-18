@@ -1,0 +1,94 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "ru.ernestoguevara.nameforchild"
+        minSdkVersion 22
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    // Support and UI
+    implementation "androidx.appcompat:appcompat:${vers.appCompat}"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation "androidx.constraintlayout:constraintlayout:${vers.constraintLayout}"
+    implementation "com.google.android.material:material:${vers.material}"
+
+    // Navigation components
+    implementation "androidx.navigation:navigation-fragment-ktx:${vers.navigation}"
+    implementation "androidx.navigation:navigation-ui-ktx:${vers.navigation}"
+
+    // Rx
+    implementation "io.reactivex.rxjava2:rxjava:${vers.rxJava}"
+    implementation "io.reactivex.rxjava2:rxandroid:${vers.rxAndroid}"
+
+    // Room
+    implementation "androidx.room:room-ktx:${vers.room}"
+    implementation "androidx.room:room-runtime:${vers.room}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    kapt "androidx.room:room-compiler:${vers.room}"
+    androidTestImplementation "androidx.room:room-testing:${vers.room}"
+
+    // Dagger 2
+    implementation "com.google.dagger:dagger:${vers.dagger}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${vers.dagger}"
+    kapt "com.google.dagger:dagger-compiler:${vers.dagger}"
+
+    // Moxy
+    implementation "com.arello-mobile:moxy:${vers.moxy}"
+    implementation "com.arello-mobile:moxy-compiler:${vers.moxy}"
+    implementation "com.arello-mobile:moxy-android:${vers.moxy}"
+    implementation "com.arello-mobile:moxy-app-compat:${vers.moxy}"
+    implementation project(':moxy_mvp')
+    kapt "com.arello-mobile:moxy-compiler:${vers.moxy}"
+    annotationProcessor "com.arello-mobile:moxy-compiler:${vers.moxy}"
+
+    // Jsoup
+    // https://jsoup.org/
+    implementation("org.jsoup:jsoup:${vers.jsoup}")
+
+    // Circular progress
+    // https://github.com/rahatarmanahmed/CircularProgressView
+    implementation "com.github.rahatarmanahmed:circularprogressview:${vers.circularPorgress}"
+
+    // Core of app
+    implementation project(':core')
+
+    // Okhttp3
+    implementation("com.squareup.okhttp3:logging-interceptor:${vers.okhttp3}")
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:${vers.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${vers.retrofit}"
+
+}

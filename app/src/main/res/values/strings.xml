@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Главная</string>
+
+    <string name="text_1">1</string>
+
+    <string name="load_error_names">Ошибка загрузки имён</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="load_error_name">Ошибка загрузки имени</string>
+</resources>

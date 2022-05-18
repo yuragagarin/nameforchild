@@ -1,0 +1,4 @@
+include ':moxy_mvp'
+include ':app'
+rootProject.name = "nameforchild"
+include ':core'

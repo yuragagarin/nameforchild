@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion vers.compileSdk
+    defaultConfig {
+        minSdkVersion vers.minSdk
+        targetSdkVersion vers.compileSdk
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion vers.buildTools
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:${vers.appCompat}"
+    implementation "com.arello-mobile:moxy:${vers.moxy}"
+    annotationProcessor "com.arello-mobile:moxy-compiler:${vers.moxy}"
+    implementation "com.arello-mobile:moxy-android:${vers.moxy}"
+    implementation "com.arello-mobile:moxy-app-compat:${vers.moxy}"
+}
+repositories {
+    mavenCentral()
+    jcenter()
+    maven { url 'https://maven.google.com' }
+}
